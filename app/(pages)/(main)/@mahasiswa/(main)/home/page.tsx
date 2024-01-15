@@ -17,7 +17,7 @@ function ProfileDropdown({ mahasiswaData }: any) {
     const router = useRouter()
 
     return (
-        <div className='bg-white rounded-lg pt-6 flex flex-col gap-3 shadow-lg'>
+        <div className='bg-relazee-dark-2 rounded-lg pt-6 flex flex-col gap-3 shadow-lg text-relazee-text-heading'>
             <div className='flex flex-row gap-3 items-center justify-between px-6'>
                 <div className='bg-center bg-cover w-9 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
                 <div className='flex flex-col'>
@@ -26,9 +26,9 @@ function ProfileDropdown({ mahasiswaData }: any) {
                 </div>
             </div>
             <div className='flex flex-col'>
-                <Link href={`/profile/handoko`} className='px-6 py-3 hover:bg-relazee-blue-light'>Profile Saya</Link>
-                <a href="#" className='px-6 py-3 hover:bg-relazee-blue-light'>Pengaturan Akun</a>
-                <a href="#" className='px-6 py-3 hover:bg-relazee-blue-light'>Preferensi</a>
+                <Link href={`/profile/handoko`} className='px-6 py-3 hover:bg-relazee-dark-3'>Profile Saya</Link>
+                <a href="#" className='px-6 py-3 hover:bg-relazee-dark-3'>Pengaturan Akun</a>
+                <a href="#" className='px-6 py-3 hover:bg-relazee-dark-3'>Preferensi</a>
                 <button onClick={() => { }} className='px-6 py-3 hover:bg-red-500 hover:text-white rounded-b-lg text-start'>Sign Out</button>
             </div>
         </div>
