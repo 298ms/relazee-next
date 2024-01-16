@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        xxs: '10px'
+      },
       colors: {
         relazee: {
           primary: '#FF4401',
@@ -19,7 +22,10 @@ const config: Config = {
           },
           text: {
             heading: '#F7F7F7',
-            body: '#C5D0E6',
+            body: {
+              1: '#C5D0E6',
+              2: '#97989D'
+            },
             placeholder: '#858EAD'
           },
           icon: {
@@ -29,7 +35,8 @@ const config: Config = {
             yellow: {
               1: '#EA942C'
             }
-          }
+          },
+          border: '#C5D0E6'
         }
       },
       backgroundImage: {
