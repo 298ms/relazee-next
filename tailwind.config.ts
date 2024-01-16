@@ -24,7 +24,8 @@ const config: Config = {
             heading: '#F7F7F7',
             body: {
               1: '#C5D0E6',
-              2: '#97989D'
+              2: '#97989D',
+              3: '#858EAD'
             },
             placeholder: '#858EAD'
           },
@@ -33,7 +34,10 @@ const config: Config = {
           },
           accent: {
             yellow: {
-              1: '#EA942C'
+              1: '#EA942C',
+            },
+            blue: {
+              1: '#5D95E8'
             }
           },
           border: '#C5D0E6'
