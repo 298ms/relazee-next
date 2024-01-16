@@ -206,9 +206,6 @@ export default function MahasiswaHome() {
                     </div>
                 </Sticky>
                 <div className='w-7/12 flex flex-col gap-5' id='feed'>
-                    {/* <div className='bg-green-500 flex flex-col gap-7 p-4'>
-                        {Array.from(Array(50), (e, i) => <Box index={i} />)}
-                    </div> */}
                     <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-4'>
                         <ToggleSwitch isOn={isAnon} handleSwitch={handleAnon} label={'Anonymouse mode'} />
                         <div className='flex flex-row gap-4 items-start'>
@@ -304,9 +301,6 @@ export default function MahasiswaHome() {
                     </div>
                 </div>
                 <Sticky enabled={true} top={80} className='w-3/12' bottomBoundary="#feed">
-                    {/* <div className='bg-red-500 flex flex-col gap-7 p-4'>
-                        {Array.from(Array(16), (e, i) => <Box index={i} />)}
-                    </div> */}
                     <div className='flex flex-col gap-5'>
                         <div className='bg-relazee-dark-2 rounded-2xl p-4 flex flex-col gap-5'>
                             <div className='flex flex-row items-center gap-2 text-relazee-text-heading'>
