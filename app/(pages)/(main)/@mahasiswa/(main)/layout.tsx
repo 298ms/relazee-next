@@ -1,5 +1,5 @@
-import MahasiswaLeftSidebar from "@/app/_components/mahasiswa/molecules/left-sidebar";
-import MahasiswaRightSidebar from "@/app/_components/mahasiswa/molecules/right-sidebar";
+import MahasiswaLeftSidebar from "@/app/_components/mahasiswa/organisms/left-sidebar";
+import MahasiswaRightSidebar from "@/app/_components/mahasiswa/organisms/right-sidebar";
 import MahasiswaTopbar from "@/app/_components/mahasiswa/molecules/topbar";
 
 export default function MahasiswaLayout({ children }: { children: React.ReactNode }) {
