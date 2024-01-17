@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { MdChat } from 'react-icons/md';
 import { IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io";
 
@@ -30,32 +30,44 @@ const PostInput = () => {
     const [isAnon, setIsAnon] = useState(false)
     const [post, setPost] = useState('')
     const [hashtag, setHashtag] = useState('')
+    const [expandPostInput, setExpandPostInput] = useState(false)
+    const postInputRef = useRef<HTMLDivElement>(null)
 
     const handleAnon = () => {
         setIsAnon(!isAnon);
     };
 
+    const collapsePostInput = (e: Event) => {
+        if (postInputRef.current && expandPostInput && !postInputRef.current.contains(e.target as Node)) {
+            setExpandPostInput(false)
+        }
+    }
+    useEffect(() => {
+        document.addEventListener('mousedown', collapsePostInput)
+    })
+
     return (
-        <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-4'>
-            <ToggleSwitch isOn={isAnon} handleSwitch={handleAnon} label={'Anonymouse mode'} />
+        <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-4' ref={postInputRef}>
+            {expandPostInput && <ToggleSwitch isOn={isAnon} handleSwitch={handleAnon} label={'Anonymouse mode'} />}
             <div className='flex flex-row gap-4 items-start'>
                 <div className='bg-center bg-cover w-10 h-10 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
                 <div className='flex flex-col gap-2 w-full'>
                     <textarea
-                        rows={5}
+                        onFocus={() => setExpandPostInput(true)}
+                        rows={expandPostInput ? 5 : 1}
                         value={post}
                         onChange={(e) => setPost(e.target.value)}
-                        placeholder='Let’s share what going on your mind...'
+                        placeholder='Let&apos;s share what&apos;s going on your mind...'
                         className='bg-relazee-dark-3 w-full rounded-lg px-4 p-2.5 placeholder-relazee-text-placeholder text-sm text-relazee-text-heading'
                     />
-                    <input
+                    {expandPostInput && <input
                         value={hashtag}
                         onChange={(e) => setHashtag(e.target.value)}
                         type='text'
                         id="hashtag"
                         className="bg-relazee-dark-3 rounded-lg block w-full px-4 p-2.5 placeholder-relazee-text-placeholder text-sm text-relazee-text-heading"
                         placeholder="Add hashtag  ex. #Pimnas #PKM "
-                    />
+                    />}
                 </div>
                 <button className='bg-relazee-orange text-white rounded-lg font-medium text-sm whitespace-nowrap px-4 py-3'>Create Post</button>
             </div>
