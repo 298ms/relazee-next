@@ -26,110 +26,77 @@ const ToggleSwitch = ({ isOn, handleSwitch, label }: any) => {
     );
 };
 
-export default function MahasiswaHome() {
+const PostInput = () => {
     const [isAnon, setIsAnon] = useState(false)
+    const [post, setPost] = useState('')
+    const [hashtag, setHashtag] = useState('')
+
     const handleAnon = () => {
         setIsAnon(!isAnon);
     };
 
-    const [post, setPost] = useState('')
-    const [hashtag, setHashtag] = useState('')
+    return (
+        <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-4'>
+            <ToggleSwitch isOn={isAnon} handleSwitch={handleAnon} label={'Anonymouse mode'} />
+            <div className='flex flex-row gap-4 items-start'>
+                <div className='bg-center bg-cover w-10 h-10 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
+                <div className='flex flex-col gap-2 w-full'>
+                    <textarea
+                        rows={5}
+                        value={post}
+                        onChange={(e) => setPost(e.target.value)}
+                        placeholder='Let’s share what going on your mind...'
+                        className='bg-relazee-dark-3 w-full rounded-lg px-4 p-2.5 placeholder-relazee-text-placeholder text-sm text-relazee-text-heading'
+                    />
+                    <input
+                        value={hashtag}
+                        onChange={(e) => setHashtag(e.target.value)}
+                        type='text'
+                        id="hashtag"
+                        className="bg-relazee-dark-3 rounded-lg block w-full px-4 p-2.5 placeholder-relazee-text-placeholder text-sm text-relazee-text-heading"
+                        placeholder="Add hashtag  ex. #Pimnas #PKM "
+                    />
+                </div>
+                <button className='bg-relazee-orange text-white rounded-lg font-medium text-sm whitespace-nowrap px-4 py-3'>Create Post</button>
+            </div>
+        </div>
+    )
+}
+
+const PostCard = () => {
+    return (
+        <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-5'>
+            <div className='flex flex-row gap-3 justify-between'>
+                <div className='flex flex-row gap-2 items-center'>
+                    <div className='bg-center bg-cover w-8 h-8 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
+                    <div className='flex flex-col'>
+                        <h4 className='text-relazee-text-heading font-semibold'>Syah Reza Pahlevi</h4>
+                        <span className='text-xs text-relazee-text-body-2'>Informatika</span>
+                    </div>
+                </div>
+                <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
+            </div>
+            <p className='text-relazee-text-body-1 text-xs font-medium'>Tahun 2022 kemarin alhamdulillah aku dapet kesempatan jadi bagian dari tahap terakhir PKM yaitu Pekan Ilmiah Mahasiswa Nasional atau yang biasa kita kenal PIMNAS<br /><br />Well, dengan kesempatan itu aku pengen coba share pengalaman PKM dan PIMNAS</p>
+            <p className='text-relazee-text-body-1 text-xs font-medium'>#PIMNAS</p>
+            <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
+                <IoMdThumbsUp />
+                <span className='text-xxs'>1055</span>
+                •
+                <IoMdThumbsDown />
+                •
+                <MdChat />
+                <span className='text-xxs'>10 Balasan</span>
+            </div>
+        </div>
+    )
+}
+
+export default function MahasiswaHome() {
 
     return (
         <>
-            <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-4'>
-                <ToggleSwitch isOn={isAnon} handleSwitch={handleAnon} label={'Anonymouse mode'} />
-                <div className='flex flex-row gap-4 items-start'>
-                    <div className='bg-center bg-cover w-10 h-10 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
-                    <div className='flex flex-col gap-2 w-full'>
-                        <textarea
-                            rows={5}
-                            value={post}
-                            onChange={(e) => setPost(e.target.value)}
-                            placeholder='Let’s share what going on your mind...'
-                            className='bg-relazee-dark-3 w-full rounded-lg px-4 p-2.5 placeholder-relazee-text-placeholder text-sm text-relazee-text-heading'
-                        />
-                        <input
-                            value={hashtag}
-                            onChange={(e) => setHashtag(e.target.value)}
-                            type='text'
-                            id="hashtag"
-                            className="bg-relazee-dark-3 rounded-lg block w-full px-4 p-2.5 placeholder-relazee-text-placeholder text-sm text-relazee-text-heading"
-                            placeholder="Add hashtag  ex. #Pimnas #PKM "
-                        />
-                    </div>
-                    <button className='bg-relazee-orange text-white rounded-lg font-medium text-sm whitespace-nowrap px-4 py-3'>Create Post</button>
-                </div>
-            </div>
-            <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-5'>
-                <div className='flex flex-row gap-3 justify-between'>
-                    <div className='flex flex-row gap-2 items-center'>
-                        <div className='bg-center bg-cover w-8 h-8 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
-                        <div className='flex flex-col'>
-                            <h4 className='text-relazee-text-heading font-semibold'>Syah Reza Pahlevi</h4>
-                            <span className='text-xs text-relazee-text-body-2'>Informatika</span>
-                        </div>
-                    </div>
-                    <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
-                </div>
-                <p className='text-relazee-text-body-1 text-xs font-medium'>Tahun 2022 kemarin alhamdulillah aku dapet kesempatan jadi bagian dari tahap terakhir PKM yaitu Pekan Ilmiah Mahasiswa Nasional atau yang biasa kita kenal PIMNAS<br /><br />Well, dengan kesempatan itu aku pengen coba share pengalaman PKM dan PIMNAS</p>
-                <p className='text-relazee-text-body-1 text-xs font-medium'>#PIMNAS</p>
-                <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
-                    <IoMdThumbsUp />
-                    <span className='text-xxs'>1055</span>
-                    •
-                    <IoMdThumbsDown />
-                    •
-                    <MdChat />
-                    <span className='text-xxs'>10 Balasan</span>
-                </div>
-            </div>
-            <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-5'>
-                <div className='flex flex-row gap-3 justify-between'>
-                    <div className='flex flex-row gap-2 items-center'>
-                        <div className='bg-center bg-cover w-8 h-8 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
-                        <div className='flex flex-col'>
-                            <h4 className='text-relazee-text-heading font-semibold'>Syah Reza Pahlevi</h4>
-                            <span className='text-xs text-relazee-text-body-2'>Informatika</span>
-                        </div>
-                    </div>
-                    <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
-                </div>
-                <p className='text-relazee-text-body-1 text-xs font-medium'>Tahun 2022 kemarin alhamdulillah aku dapet kesempatan jadi bagian dari tahap terakhir PKM yaitu Pekan Ilmiah Mahasiswa Nasional atau yang biasa kita kenal PIMNAS<br /><br />Well, dengan kesempatan itu aku pengen coba share pengalaman PKM dan PIMNAS</p>
-                <p className='text-relazee-text-body-1 text-xs font-medium'>#PIMNAS</p>
-                <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
-                    <IoMdThumbsUp />
-                    <span className='text-xxs'>1055</span>
-                    •
-                    <IoMdThumbsDown />
-                    •
-                    <MdChat />
-                    <span className='text-xxs'>10 Balasan</span>
-                </div>
-            </div>
-            <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-5'>
-                <div className='flex flex-row gap-3 justify-between'>
-                    <div className='flex flex-row gap-2 items-center'>
-                        <div className='bg-center bg-cover w-8 h-8 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
-                        <div className='flex flex-col'>
-                            <h4 className='text-relazee-text-heading font-semibold'>Syah Reza Pahlevi</h4>
-                            <span className='text-xs text-relazee-text-body-2'>Informatika</span>
-                        </div>
-                    </div>
-                    <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
-                </div>
-                <p className='text-relazee-text-body-1 text-xs font-medium'>Tahun 2022 kemarin alhamdulillah aku dapet kesempatan jadi bagian dari tahap terakhir PKM yaitu Pekan Ilmiah Mahasiswa Nasional atau yang biasa kita kenal PIMNAS<br /><br />Well, dengan kesempatan itu aku pengen coba share pengalaman PKM dan PIMNAS</p>
-                <p className='text-relazee-text-body-1 text-xs font-medium'>#PIMNAS</p>
-                <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
-                    <IoMdThumbsUp />
-                    <span className='text-xxs'>1055</span>
-                    •
-                    <IoMdThumbsDown />
-                    •
-                    <MdChat />
-                    <span className='text-xxs'>10 Balasan</span>
-                </div>
-            </div>
+            <PostInput />
+            {Array.from(Array(10), (e, i) => <PostCard key={i} />)}
         </>
     )
 }
