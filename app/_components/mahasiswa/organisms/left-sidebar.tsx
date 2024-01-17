@@ -71,7 +71,7 @@ const Feedback = () => {
 export default function MahasiswaLeftSidebar() {
     return (
         <Sticky enabled={true} top={80} className='w-2/12' bottomBoundary="#feed">
-            <div className='flex flex-col gap-5'>
+            <div className='flex flex-col gap-5 pb-5'>
                 <Filter />
                 <PopularTags />
                 <Feedback />

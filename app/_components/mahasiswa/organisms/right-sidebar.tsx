@@ -152,7 +152,7 @@ const Donation = () => {
 export default function MahasiswaRightSidebar() {
     return (
         <Sticky enabled={true} top={80} className='w-3/12' bottomBoundary="#feed">
-            <div className='flex flex-col gap-5'>
+            <div className='flex flex-col gap-5 pb-5'>
                 <Events />
                 <GetToKnow />
                 <Donation />
