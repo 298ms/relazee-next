@@ -21,8 +21,8 @@ function ProfileDropdown({ mahasiswaData }: any) {
             <div className='flex flex-row gap-3 items-center justify-between px-6'>
                 <div className='bg-center bg-cover w-9 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
                 <div className='flex flex-col'>
-                    <h4 className='font-medium'>Putra Handoko</h4>
-                    <span className='text-gray-400 text-sm'>@handoko</span>
+                    <h4 className='font-semibold'>Putra Handoko</h4>
+                    <span className='text-relazee-text-body-2 text-sm'>@handoko</span>
                 </div>
             </div>
             <div className='flex flex-col'>
@@ -98,7 +98,9 @@ export default function MahasiswaTopbar() {
                         <li><Link href={'/home'} className='w-10 h-10 rounded-md bg-relazee-dark-3 flex items-center justify-center'><GoBellFill /></Link></li>
                     </ul>
                     <button onClick={() => setShowProfileDropdown(!showProfileDropdown)} className='flex flex-row items-center gap-2'>
-                        <div className="bg-center bg-cover w-10 h-10 aspect-square rounded-md border border-relazee-accent-yellow-1" style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
+                        <div className="rounded-md w-10 h-10 flex items-center justify-center bg-transparent border border-relazee-accent-yellow-1">
+                            <div className="bg-center bg-cover w-8 h-8 aspect-square rounded-md" style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
+                        </div>
                         <i className="text-xs"><BsCaretDownFill /></i>
                     </button>
                 </div>
