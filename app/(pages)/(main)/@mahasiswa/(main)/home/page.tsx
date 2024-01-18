@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { MdChat } from 'react-icons/md';
 import { IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io";
+import { BsExclamationCircle, BsShareFill, BsThreeDots } from 'react-icons/bs';
 
 const dummyPhoto = 'https://source.unsplash.com/random/?person'
 
@@ -75,7 +76,39 @@ const PostInput = () => {
     )
 }
 
+function DetailMenu() {
+    return (
+        <div
+            className="bg-relazee-dark-2 rounded-lg flex flex-col text-relazee-text-body-1"
+            style={{ boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}
+        >
+            <button className="flex flex-row rounded-t-lg items-center gap-3 hover:bg-relazee-dark-3 px-4 py-2">
+                <BsExclamationCircle />
+                <span className='text-xxs'>Laporkan</span>
+            </button>
+            <button className="flex flex-row rounded-b-lg items-center gap-3 hover:bg-relazee-dark-3 px-4 py-2">
+                <BsShareFill />
+                <span className='text-xxs'>Bagikan</span>
+            </button>
+        </div >
+    )
+}
+
 const PostCard = () => {
+    const [showDetailMenu, setShowDetailMenu] = useState(false)
+
+    const detailMenuRef = useRef<HTMLDivElement>(null)
+
+    const closeDetailMenu = (e: Event) => {
+        if (detailMenuRef.current && showDetailMenu && !detailMenuRef.current.contains(e.target as Node)) {
+            setShowDetailMenu(false)
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('mousedown', closeDetailMenu)
+    })
+
     return (
         <div className='bg-relazee-dark-2 rounded-2xl flex flex-col gap-4 p-5'>
             <div className='flex flex-row gap-3 justify-between'>
@@ -90,14 +123,18 @@ const PostCard = () => {
             </div>
             <p className='text-relazee-text-body-1 text-xs font-medium'>Tahun 2022 kemarin alhamdulillah aku dapet kesempatan jadi bagian dari tahap terakhir PKM yaitu Pekan Ilmiah Mahasiswa Nasional atau yang biasa kita kenal PIMNAS<br /><br />Well, dengan kesempatan itu aku pengen coba share pengalaman PKM dan PIMNAS</p>
             <p className='text-relazee-text-body-1 text-xs font-medium'>#PIMNAS</p>
-            <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
-                <IoMdThumbsUp />
-                <span className='text-xxs'>1055</span>
-                •
-                <IoMdThumbsDown />
-                •
-                <MdChat />
-                <span className='text-xxs'>10 Balasan</span>
+            <div className='flex flex-row items-center gap-2 justify-between text-relazee-text-body-1 relative'>
+                <div className='flex flex-row items-center gap-2'>
+                    <IoMdThumbsUp />
+                    <span className='text-xxs'>1055</span>
+                    •
+                    <IoMdThumbsDown />
+                    •
+                    <MdChat />
+                    <span className='text-xxs'>10 Balasan</span>
+                </div>
+                <button onClick={() => setShowDetailMenu(!showDetailMenu)}><BsThreeDots /></button>
+                {showDetailMenu && <div className="absolute bottom-[90%] right-0" ref={detailMenuRef}><DetailMenu /></div>}
             </div>
         </div>
     )
