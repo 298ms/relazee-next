@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { MdChat } from 'react-icons/md';
 import { IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io";
 import { BsExclamationCircle, BsShareFill, BsThreeDots } from 'react-icons/bs';
+import TagsInput from '@/app/_components/shared/atoms/tags-input';
 
 const dummyPhoto = 'https://source.unsplash.com/random/?person'
 
@@ -30,7 +31,7 @@ const ToggleSwitch = ({ isOn, handleSwitch, label }: any) => {
 const PostInput = () => {
     const [isAnon, setIsAnon] = useState(false)
     const [post, setPost] = useState('')
-    const [hashtag, setHashtag] = useState('')
+    const [hashtag, setHashtag] = useState<string[]>([])
     const [expandPostInput, setExpandPostInput] = useState(false)
     const postInputRef = useRef<HTMLDivElement>(null)
 
@@ -73,14 +74,7 @@ const PostInput = () => {
                         />
                     }
                     {expandPostInput &&
-                        <input
-                            value={hashtag}
-                            onChange={(e) => setHashtag(e.target.value)}
-                            type='text'
-                            id="hashtag"
-                            className="bg-relazee-dark-3 rounded-lg block w-full px-4 p-2.5 placeholder-relazee-text-placeholder text-sm text-relazee-text-heading"
-                            placeholder="Add hashtag  ex. #Pimnas #PKM "
-                        />
+                        <TagsInput tags={hashtag} setTags={setHashtag} placeholder='Add hashtag  ex. #Pimnas #PKM' />
                     }
                 </div>
                 <button className='bg-relazee-orange text-white rounded-lg font-medium text-sm whitespace-nowrap px-4 py-3'>Create Post</button>
