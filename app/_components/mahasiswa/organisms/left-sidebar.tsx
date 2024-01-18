@@ -9,9 +9,14 @@ import { Dialog } from "@radix-ui/themes";
 import { useState } from "react";
 
 const Filter = () => {
+    const [filter, setFilter] = useState('terbaru')
+
     return (
         <div className='bg-relazee-dark-2 rounded-2xl p-3 flex flex-col gap-2'>
-            <button className='flex flex-row gap-1 items-center p-2 rounded-md text-start'>
+            <button
+                className={`flex flex-row gap-1 items-center p-2 rounded-md text-start transition-all ${filter == 'terbaru' ? 'bg-relazee-dark-3' : ''}`}
+                onClick={() => setFilter('terbaru')}
+            >
                 <Image
                     src={FilterNew}
                     alt='filter new'
@@ -21,7 +26,10 @@ const Filter = () => {
                     <span className='text-xxs text-relazee-text-body-2'>Topik terbaru saat ini</span>
                 </div>
             </button>
-            <button className='flex flex-row gap-1 items-center p-2 rounded-md bg-relazee-dark-3 text-start'>
+            <button
+                className={`flex flex-row gap-1 items-center p-2 rounded-md text-start transition-all ${filter == 'populer' ? 'bg-relazee-dark-3' : ''}`}
+                onClick={() => setFilter('populer')}
+            >
                 <Image
                     src={FilterPopular}
                     alt='filter new'
