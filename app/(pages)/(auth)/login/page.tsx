@@ -27,19 +27,6 @@ const AuthCarouselItem = () => {
     )
 }
 
-const carouselItems = [<AuthCarouselItem />, <AuthCarouselItem />, <AuthCarouselItem />];
-
-// const CustomDot = ({ onClick, active, index, carouselState }: any) => {
-//     const { currentSlide } = carouselState;
-//     return (
-//         <li className="bg-red-500 z-10">
-//             <button
-//                 className="bg-red-500"
-//                 onClick={() => onClick()}
-//             />
-//         </li>
-//     );
-// };
 const CustomDot = ({ onClick, ...rest }: any) => {
     const {
         onMove,
@@ -109,17 +96,8 @@ const AuthCarousel = ({ children }: any) => {
         >
             {children}
         </Carousel>
-        // <Carousel
-        //     responsive={responsive}
-        //     // customRightArrow={<CustomRightArrow />}
-        //     // customLeftArrow={<CustomLeftArrow />}
-        //     sliderClass='gap-3 items-stretch'
-        // >
-        //     {children}
-        // </Carousel>
     )
 }
-
 
 
 export default function Login() {
