@@ -9,7 +9,6 @@ function TagsInput({ tags, setTags, placeholder, ...props }:
     // const [tags, setTags] = useState<string[]>([])
 
     function handleKeyDown(e: any) {
-        console.log(e.key)
         if (e.key !== 'Enter' && e.key !== ' ') return
         const value = e.target.value
         if (!value.trim()) return

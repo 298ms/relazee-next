@@ -5,6 +5,7 @@ import { MdChat } from 'react-icons/md';
 import { IoMdThumbsDown, IoMdThumbsUp } from "react-icons/io";
 import { BsExclamationCircle, BsShareFill, BsThreeDots } from 'react-icons/bs';
 import TagsInput from '@/app/_components/shared/atoms/tags-input';
+import Link from 'next/link';
 
 const dummyPhoto = 'https://source.unsplash.com/random/?person'
 
@@ -137,8 +138,10 @@ const PostCard = () => {
                     •
                     <IoMdThumbsDown />
                     •
-                    <MdChat />
-                    <span className='text-xxs'>10 Balasan</span>
+                    <Link href={`/feed/5`} className='flex flex-row items-center gap-2'>
+                        <MdChat />
+                        <span className='text-xxs'>10 Balasan</span>
+                    </Link>
                 </div>
                 <button onClick={() => setShowDetailMenu(!showDetailMenu)}><BsThreeDots /></button>
                 {showDetailMenu && <div className="absolute bottom-[90%] right-0" ref={detailMenuRef}><DetailMenu /></div>}
