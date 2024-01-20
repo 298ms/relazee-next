@@ -2,7 +2,7 @@ import MahasiswaLeftSidebar from "@/app/_components/mahasiswa/organisms/left-sid
 import MahasiswaRightSidebar from "@/app/_components/mahasiswa/organisms/right-sidebar";
 import MahasiswaTopbar from "@/app/_components/mahasiswa/molecules/topbar";
 
-export default function MahasiswaHomeLayout({ children }: { children: React.ReactNode }) {
+export default function MahasiswaFeedLayout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <MahasiswaTopbar />

@@ -147,7 +147,7 @@ const PostCard = () => {
     )
 }
 
-export default function MahasiswaHome() {
+export default function MahasiswaFeed() {
 
     return (
         <>
