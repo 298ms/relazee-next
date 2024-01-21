@@ -115,83 +115,77 @@ export default function MahasiswaFeedDetail() {
                             •
                             <IoMdThumbsDown />
                             •
-                            <Link href={`/feed/5`} className='flex flex-row items-center gap-2'>
-                                <MdChat />
-                                <span className='text-xxs'>10 Balasan</span>
-                            </Link>
+                            <span className='text-xxs'>Balas</span>
                         </div>
 
                         {/* Replies */}
-                        <div className="flex flex-row gap-4 py-2">
-                            <div className='bg-center bg-cover w-6 h-6 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
-                            <div className="flex flex-col w-full gap-2">
-                                <div className="flex flex-row justify-between">
-                                    <div className='flex flex-row items-center gap-2'>
-                                        <h4 className='text-relazee-text-heading font-medium text-sm'>Syah Reza Pahlevi</h4>
-                                        <span className="text-xs text-relazee-text-body-2">-</span>
-                                        <span className='text-xs text-relazee-text-body-2'>Informatika</span>
+                        <div className="flex flex-col gap-4 py-2">
+                            <div className="flex flex-row gap-4">
+                                <div className='bg-center bg-cover w-6 h-6 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
+                                <div className="flex flex-col w-full gap-2">
+                                    <div className="flex flex-row justify-between">
+                                        <div className='flex flex-row items-center gap-2'>
+                                            <h4 className='text-relazee-text-heading font-medium text-sm'>Syah Reza Pahlevi</h4>
+                                            <span className="text-xs text-relazee-text-body-2">-</span>
+                                            <span className='text-xs text-relazee-text-body-2'>Informatika</span>
+                                        </div>
+                                        <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
                                     </div>
-                                    <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
-                                </div>
-                                <p className='text-relazee-text-heading text-xs font-medium'>Mang eak?</p>
-                                <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
-                                    <IoMdThumbsUp />
-                                    <span className='text-xxs'>1055</span>
-                                    •
-                                    <IoMdThumbsDown />
-                                    •
-                                    <Link href={`/feed/5`} className='flex flex-row items-center gap-2'>
-                                        <MdChat />
-                                        <span className='text-xxs'>10 Balasan</span>
-                                    </Link>
-                                </div>
-                                <div className="flex flex-row gap-4 py-2">
-                                    <div className='bg-center bg-cover w-6 h-6 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
-                                    <div className="flex flex-col w-full gap-2">
-                                        <div className="flex flex-row justify-between">
-                                            <div className='flex flex-row items-center gap-2'>
-                                                <h4 className='text-relazee-text-heading font-medium text-sm'>Syah Reza Pahlevi</h4>
-                                                <span className="text-xs text-relazee-text-body-2">-</span>
-                                                <span className='text-xs text-relazee-text-body-2'>Informatika</span>
-                                            </div>
-                                            <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
-                                        </div>
-                                        <p className='text-relazee-text-heading text-xs font-medium'>Mang eak?</p>
-                                        <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
-                                            <IoMdThumbsUp />
-                                            <span className='text-xxs'>1055</span>
-                                            •
-                                            <IoMdThumbsDown />
-                                            •
-                                            <Link href={`/feed/5`} className='flex flex-row items-center gap-2'>
-                                                <MdChat />
-                                                <span className='text-xxs'>10 Balasan</span>
-                                            </Link>
-                                        </div>
+                                    <p className='text-relazee-text-heading text-xs font-medium'>Mang eak?</p>
+                                    <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
+                                        <IoMdThumbsUp />
+                                        <span className='text-xxs'>1055</span>
+                                        •
+                                        <IoMdThumbsDown />
+                                        •
+                                        <span className='text-xxs'>Balas</span>
                                     </div>
-                                </div>
-                                <div className="flex flex-row gap-4 py-2">
-                                    <div className='bg-center bg-cover w-6 h-6 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
-                                    <div className="flex flex-col w-full gap-2">
-                                        <div className="flex flex-row justify-between">
-                                            <div className='flex flex-row items-center gap-2'>
-                                                <h4 className='text-relazee-text-heading font-medium text-sm'>Syah Reza Pahlevi</h4>
-                                                <span className="text-xs text-relazee-text-body-2">-</span>
-                                                <span className='text-xs text-relazee-text-body-2'>Informatika</span>
+
+                                    {/* Replies */}
+                                    <div className="flex flex-col gap-4 py-2">
+                                        <div className="flex flex-row gap-4">
+                                            <div className='bg-center bg-cover w-6 h-6 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
+                                            <div className="flex flex-col w-full gap-2">
+                                                <div className="flex flex-row justify-between">
+                                                    <div className='flex flex-row items-center gap-2'>
+                                                        <h4 className='text-relazee-text-heading font-medium text-sm'>Syah Reza Pahlevi</h4>
+                                                        <span className="text-xs text-relazee-text-body-2">-</span>
+                                                        <span className='text-xs text-relazee-text-body-2'>Informatika</span>
+                                                    </div>
+                                                    <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
+                                                </div>
+                                                <p className='text-relazee-text-heading text-xs font-medium'>Mang eak?</p>
+                                                <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
+                                                    <IoMdThumbsUp />
+                                                    <span className='text-xxs'>1055</span>
+                                                    •
+                                                    <IoMdThumbsDown />
+                                                    •
+                                                    <span className='text-xxs'>Balas</span>
+                                                </div>
                                             </div>
-                                            <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
                                         </div>
-                                        <p className='text-relazee-text-heading text-xs font-medium'>Mang eak?</p>
-                                        <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
-                                            <IoMdThumbsUp />
-                                            <span className='text-xxs'>1055</span>
-                                            •
-                                            <IoMdThumbsDown />
-                                            •
-                                            <Link href={`/feed/5`} className='flex flex-row items-center gap-2'>
-                                                <MdChat />
-                                                <span className='text-xxs'>10 Balasan</span>
-                                            </Link>
+                                        <div className="flex flex-row gap-4">
+                                            <div className='bg-center bg-cover w-6 h-6 aspect-square rounded-full' style={{ backgroundImage: `url(${dummyPhoto})` }}></div>
+                                            <div className="flex flex-col w-full gap-2">
+                                                <div className="flex flex-row justify-between">
+                                                    <div className='flex flex-row items-center gap-2'>
+                                                        <h4 className='text-relazee-text-heading font-medium text-sm'>Syah Reza Pahlevi</h4>
+                                                        <span className="text-xs text-relazee-text-body-2">-</span>
+                                                        <span className='text-xs text-relazee-text-body-2'>Informatika</span>
+                                                    </div>
+                                                    <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
+                                                </div>
+                                                <p className='text-relazee-text-heading text-xs font-medium'>Mang eak?</p>
+                                                <div className='flex flex-row items-center gap-2 text-relazee-text-body-1'>
+                                                    <IoMdThumbsUp />
+                                                    <span className='text-xxs'>1055</span>
+                                                    •
+                                                    <IoMdThumbsDown />
+                                                    •
+                                                    <span className='text-xxs'>Balas</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
