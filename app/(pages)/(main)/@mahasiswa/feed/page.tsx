@@ -129,8 +129,8 @@ const PostCard = () => {
                 </div>
                 <span className='text-xxs text-relazee-text-body-1'>2 hari yang lalu</span>
             </div>
-            <p className='text-relazee-text-body-1 text-xs font-medium'>Tahun 2022 kemarin alhamdulillah aku dapet kesempatan jadi bagian dari tahap terakhir PKM yaitu Pekan Ilmiah Mahasiswa Nasional atau yang biasa kita kenal PIMNAS<br /><br />Well, dengan kesempatan itu aku pengen coba share pengalaman PKM dan PIMNAS</p>
-            <p className='text-relazee-text-body-1 text-xs font-medium'>#PIMNAS</p>
+            <p className='text-relazee-text-heading text-xs font-medium'>Tahun 2022 kemarin alhamdulillah aku dapet kesempatan jadi bagian dari tahap terakhir PKM yaitu Pekan Ilmiah Mahasiswa Nasional atau yang biasa kita kenal PIMNAS<br /><br />Well, dengan kesempatan itu aku pengen coba share pengalaman PKM dan PIMNAS</p>
+            <p className='text-relazee-text-heading text-xs font-medium'>#PIMNAS</p>
             <div className='flex flex-row items-center gap-2 justify-between text-relazee-text-body-1 relative'>
                 <div className='flex flex-row items-center gap-2'>
                     <IoMdThumbsUp />
